@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/Pacifico.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+}
+.alto{
+	height: 2.8em;
+	color: white !important;
+}
+.altura{
+	color: #444 !important;
+}
+.altura p{
+	padding: 2.5em;
+}
+#btn-agregar{
+	z-index: 2000;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	
+}
+#busqueda{
+	height: 250px;
+}
+#cumple{
+	height: 400px;
+	overflow-y: auto;
+}
+#resultados{
+	height: 200px;
+overflow: auto;
+}
+.be-white{
+	color: white;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.paddin-largo{
+	padding: 1em 2em 2em 2em;
+}
+.bordeder{
+	border-right: 3px dotted #444;
+}
+.borde-abajo{
+	border-bottom: 2px solid #c3aa7c;
+}
+.land{
+	z-index: -1000;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 13em;
+	background-color: #01579b ;
+ -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); 	
+}
+.centrarlogo{
+	width: 80%;
+}
+.centrarlogo img{
+	position: absolute;
+	top: 8em;
+	left: 40%;
+}
+.centrarlogo a{
+	position: absolute;
+	bottom: -15em;
+	left: 45%;
+}
+.up-space{
+	margin-top: 3em;
+}
+.more-up-space{
+	margin-top: 6em;
+}
+.pacifico{
+
+font-family: 'Pacifico', cursive;
+}
+.paneles{
+	height: 280px;
+}
+.espacio-izq{
+	padding-left: 4em;
+}
+.grande{
+	font-size: 5em;
+}
+.espacio-abajo{
+	margin-bottom: 1em;
+}
+.efecto-loco{
+
+}
+.efecto-loco:hover{
+
+	box-shadow: 0 5px 11px 0 rgba(46,125,50, 0.5); 	
+	
+	transition:all ease 0.5s;
+}
