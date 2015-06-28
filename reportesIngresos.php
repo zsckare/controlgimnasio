@@ -57,20 +57,51 @@
 					$final=" WHERE fecha <= '".$final."'";
 				}
 			}
-			$consulta="SELECT * FROM ingresos ".$inicio.$final." ORDER BY fecha";			
+			$consulta="SELECT * FROM ingresos ".$inicio.$final." ORDER BY fecha";
 			$resultado=mysql_query($consulta, $link)or die(mysql_error());
-			echo '<table><tr><td></td><td>FECHA</td><td>Ingreso</td></tr>';
+			echo '<table><tr><td></td><td>FECHA</td><td>Ingreso</td><td colspan="3">Cliente</td><td>Tipo</td></tr>';
 			$c=1;
 			while($registro= mysql_fetch_row($resultado))
 			{
-				echo '<tr><td>'.$c.'</td><td>'.$registro[1].'</td><td>'.$registro[2].'</td></tr>';
+				$id=$registro[0];
+				$tipo=$registro[3];
+				$tiempo="";
+				switch ($tipo) {
+					case '0':
+						$tiempo="Semanal";
+						break;
+					
+					case '1':
+						$tiempo="Mensual";
+						break;
+					
+					case '2':
+						$tiempo="Bimestral";
+						break;
+
+					case '3':
+						$tiempo="Trimestral";
+						break;
+					
+					case '4':
+						$tiempo="Semestral";
+						break;
+					
+					case '5':
+						$tiempo="Anual";
+						break;
+				}
+				$consulta= "SELECT paterno, materno, nombre FROM clientes WHERE id=".$id;
+				$cliente=mysql_query($consulta, $link)or die(mysql_error());
+				$cliente=mysql_fetch_row($cliente);
+				echo '<tr><td>'.$c.'</td><td>'.$registro[1].'</td><td>'.$registro[2].'</td><td>'.$cliente[0].'</td><td>'.$cliente[1].'</td><td>'.$cliente[2].'</td><td>'.$tiempo.'</td></tr>';
 				$c++;
 			}
 			echo "</table>";
 		}
 	?>
 	</div>
-     <script src=" js/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
 </body>

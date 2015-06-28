@@ -16,10 +16,10 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col m7 card up-space paddin-largo" >
+			<div class="col m7 s12 card up-space paddin-largo" >
 				<h3 class="center-align">Buscar Cliente</h3>
 				<div class="row">
-					<div class="col m8 offset-m2 center-align">
+					<div class="col m8 s12 offset-m2 center-align">
 						<form>
 					        <div class="input-field">
 					          <input id="buscar" type="search" required>
@@ -37,7 +37,7 @@
 			</div>
 
 
-			<div  class="col m4 offset-m1 up-space">
+			<div  class="col m4 s12 offset-m1 up-space">
 				<div class="row">
 					<a href="#modal1" style="height:170px;" class="modal-trigger col m12 s12 center-align card altura">
 						<h3 class="ion-android-calendar"></h3>

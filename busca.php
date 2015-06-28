@@ -7,7 +7,7 @@ $buscar = $_POST['b'];
       }
        
       function buscar($b) {
-            $con = mysql_connect('localhost','root', 'root');
+            $con = mysql_connect('localhost','root', '');
             mysql_select_db('gimnasio', $con);
        
             $sql = mysql_query("SELECT * FROM clientes WHERE nombre LIKE '%".$b."%' OR paterno LIKE '%".$b."%' ",$con);

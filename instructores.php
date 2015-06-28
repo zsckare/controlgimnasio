@@ -35,6 +35,8 @@
 					    echo "<td>$row[2]</td>";
 					    echo '<td><a class="tooltipped" data-position="left" data-delay="20" data-tooltip="Ver Datos" href="verInstructor.php?id='.$row[0].'"'.'><h5 ><i class="small mdi-action-visibility"></i></h5></a></td>';
 					    echo '<td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Editar Datos" href="editarInstructor.php?id='.$row[0].'"'.'><h5 ><i class="small ion-compose"></i></h5></a></td>';
+					    echo '<td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Eliminar" href="eliminarinstructor.php?id='.$row[0].'"'.'><h5 ><i class="small ion-trash-a"></i></h5></a></td>';
+					    
 					    echo "</tr>";  
 					}  
 					echo "</table>"; 

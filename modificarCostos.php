@@ -34,11 +34,11 @@
 			mysql_query($consulta, $link)or die(mysql_error());
 			$consulta="UPDATE costos SET a1=".$_POST['c0'].", a2=".$_POST['c1'].", a3=".$_POST['c2']." WHERE tipo=3";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costos SET a1=".$_POST['d0'].", a2=".$_POST['a1'].", a3=".$_POST['a2']." WHERE tipo=4";
+			$consulta="UPDATE costos SET a1=".$_POST['d0'].", a2=".$_POST['d1'].", a3=".$_POST['d2']." WHERE tipo=4";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costos SET a1=".$_POST['e0'].", a2=".$_POST['a1'].", a3=".$_POST['a2']." WHERE tipo=5";
+			$consulta="UPDATE costos SET a1=".$_POST['e0'].", a2=".$_POST['e1'].", a3=".$_POST['e2']." WHERE tipo=5";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costos SET a1=".$_POST['f0'].", a2=".$_POST['a1'].", a3=".$_POST['a2']." WHERE tipo=6";
+			$consulta="UPDATE costos SET a1=".$_POST['f0'].", a2=".$_POST['f1'].", a3=".$_POST['f2']." WHERE tipo=6";
 			mysql_query($consulta, $link)or die(mysql_error());
 	
 	
@@ -48,11 +48,11 @@
 			mysql_query($consulta, $link)or die(mysql_error());
 			$consulta="UPDATE costosspining SET e0=".$_POST['c3'].", e1=".$_POST['c4'].", e2=".$_POST['c5'].", e3=".$_POST['c6']." WHERE tipo=3";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costosspining SET e0=".$_POST['d3'].", e1=".$_POST['a4'].", e2=".$_POST['a5'].", e3=".$_POST['a6']." WHERE tipo=4";
+			$consulta="UPDATE costosspining SET e0=".$_POST['d3'].", e1=".$_POST['d4'].", e2=".$_POST['d5'].", e3=".$_POST['d6']." WHERE tipo=4";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costosspining SET e0=".$_POST['e3'].", e1=".$_POST['a4'].", e2=".$_POST['a5'].", e3=".$_POST['a6']." WHERE tipo=5";
+			$consulta="UPDATE costosspining SET e0=".$_POST['e3'].", e1=".$_POST['e4'].", e2=".$_POST['e5'].", e3=".$_POST['e6']." WHERE tipo=5";
 			mysql_query($consulta, $link)or die(mysql_error());
-			$consulta="UPDATE costosspining SET e0=".$_POST['f3'].", e1=".$_POST['a4'].", e2=".$_POST['a5'].", e3=".$_POST['a6']." WHERE tipo=6";
+			$consulta="UPDATE costosspining SET e0=".$_POST['f3'].", e1=".$_POST['f4'].", e2=".$_POST['f5'].", e3=".$_POST['f6']." WHERE tipo=6";
 			mysql_query($consulta, $link)or die(mysql_error());
 			echo '	<script type="text/javascript">alert("Cambios echos correctamente");</script>';
 		}
@@ -128,7 +128,7 @@
 		</div>
 	</div>
 	    <!--SCRIPTS-->
-    <script src=" js/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
 </body>

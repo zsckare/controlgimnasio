@@ -15,7 +15,6 @@
     <div class="land"></div>
     <div class="container">
         <div class="card paddin-largo up-space">
-
 	<?php
 
 			date_default_timezone_set("America/Mexico_City");
@@ -30,10 +29,10 @@
 			$cliente=mysql_fetch_row($resultado);
 			$nombre= $cliente[0]." ".$cliente[1]." ".$cliente[2];
 
-			echo '<h3 class="center-align">Suscripcion de: '.$cliente[0]." ".$cliente[1]." ".$cliente[2]."</h3><br>";
+			echo "<h3>Suscripcion de:".$cliente[0]." ".$cliente[1]." ".$cliente[2]."</h3><br>";
 			echo '<form action="tipoSuscripcion.php" method="POST">';
-			echo ' 
-			<input type="hidden" value="'.$id.'" name="id">
+			echo '<input type="hidden" value="'.$id.'" name="id">';
+			echo '
 <div class="row">
 				<div class="col m6 s12">
 					<h5 class="center-align">Actividades a registrar:</h5>
@@ -126,6 +125,7 @@
 			
 			';
 			echo "</form>";
+			echo '</form>';
 		}
 		elseif(isset($_POST['id']))
 		{
@@ -140,7 +140,7 @@
 			if(isset($_POST['kic'])) $kic=1;
 			if($spi==0 && $pes==0 && $zum==0 && $kic==0)
 			{
-				echo '<script type="text/javascript">sweetAlert("No selecciono ninguna actividad","","error")</script>';
+				echo '<script type="text/javascript">alert("No selecciono ninguna actividad")</script>';
 				echo '<script type="text/javascript">location.href="tipoSuscripcion.php?id='.$id.'"</script>';
 			}
 			$extras=$pes+$zum+$kic;
@@ -176,32 +176,25 @@
 				$consulta="";
 				if($spi==1)
 				{
-					$consulta="SELECT * FROM costosspining WHERE tipo = ".$tipo."";
+					$consulta="SELECT * FROM costosspining WHERE tipo = '$tipo'";
 				}else
 				{
-					$consulta="SELECT * FROM costos WHERE tipo = ".$tipo."";
+					$consulta="SELECT * FROM costos WHERE tipo = '$tipo'";
 				}
-					$resultado2 = mysql_query($consulta, $link);
-					$registro= mysql_fetch_row($resultado2);
+					$resultado = mysql_query($consulta, $link);
+					$registro= mysql_fetch_row($resultado);
 					$costo=$registro[$extras];
 			}
 			$consulta="INSERT INTO suscripciones(id, inicio, vence, costo, spining, pesas, zumba, kickboxing, tipo, motivo) VALUES(".$id.", '".$inicio."', '".$vence."', ".$costo.", ".$spi.", ".$pes.", ".$zum.", ".$kic.", ".$tipo.", '".$motivo."')";
 			mysql_query($consulta, $link)or die(mysql_error());
 			$consulta="UPDATE clientes SET activo=1 WHERE id=".$id;
 			mysql_query($consulta, $link) or die(mysql_error());
-			$consulta="INSERT INTO ingresos(id, fecha, cantidad) VALUES (".$id.", '".$inicio."', ".$costo." )";
+			$consulta="INSERT INTO ingresos(id, fecha, cantidad, tipo) VALUES (".$id.", '".$inicio."', ".$costo.", ".$tipo." )";
 			mysql_query($consulta, $link)or die(mysql_error());
 			echo '<script type="text/javascript">sweetAlert("Datos registrados","","success")</script>';
 			echo '<script type="text/javascript">location.href="suscripciones.php"</script>';
 		}
 	?>
-
-    </div>
-         
-
-    <!--SCRIPTS-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+ </div> </div>
 </body>
 </html>

@@ -92,11 +92,11 @@
 			{
 				if($registro[2]==0)
 				{
-					echo '<tr><td>'.$c.'</td><td>'.$registro[1].'</td><td>'.$registro[4].'</td><td>'.$registro[5].'</td><td>'.$registro[6].'</td><td>'.$registro[3].'</td><td>'.$registro[3].'</td><td>Entró</td></tr>';
+					echo '<tr><td></td><td>'.$registro[1].'</td><td>'.$registro[4].'</td><td>'.$registro[5].'</td><td>'.$registro[6].'</td><td>'.$registro[3].'</td><td>'.$registro[3].'</td><td>Entró</td></tr>';
 				}
 				else
 				{
-					echo '<tr><td>'.$c.'</td><td>'.$registro[1].'</td><td>'.$registro[4].'</td><td>'.$registro[5].'</td><td>'.$registro[6].'</td><td>'.$registro[3].'</td><td>'.$registro[3].'</td><td>Salió</td></tr>';
+					echo '<tr><td></td><td>'.$registro[1].'</td><td>'.$registro[4].'</td><td>'.$registro[5].'</td><td>'.$registro[6].'</td><td>'.$registro[3].'</td><td>'.$registro[3].'</td><td>Salió</td></tr>';
 				}
 				$c++;
 			}

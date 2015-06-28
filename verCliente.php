@@ -17,7 +17,7 @@
         <div class="card paddin-largo up-space">
           <div class="row">
             <div class="col m2 s12">
-              <a href="suscripciones.php" class="btn-floating tooltipped" data-position="right" data-delay="50" data-tooltip="Regresar"><i class="mdi-navigation-arrow-back"></i>Regresar</a>
+              <a href="suscripciones.php" class="btn-floating tooltipped light-blue darken-4" data-position="right" data-delay="50" data-tooltip="Regresar"><i class="mdi-navigation-arrow-back"></i>Regresar</a>
             </div>
           </div>
           <?php 
@@ -55,11 +55,7 @@
                         echo '</div>';
  
         ?>  
-                  <div class="row">
-                    <div class="col s12 m8">
-                      Sucripcion vence:
-                    </div>
-                  </div>
+
                    </div>
                 </div> 
         </div>

@@ -72,7 +72,7 @@
 			{
 				if ($registro[4]==0)
 				{
-					echo '<tr><td>'.$registro[1].' '.$registro[2].' '.$registro[3].'</td><td><a href="tipoSuscripcion.php?id='.$registro[0].'">Inscribir</a></td>'.'</td><td><a class="tooltipped" data-position="left" data-delay="20" data-tooltip="Ver Datos" href="verCliente.php?id='.$registro[0].'"'.'><h5 ><i class="small mdi-action-visibility"></i></h5></a></td>'.'</td><td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Editar Cliente" href="editarCliente.php?id='.$registro[0].'"'.'><i class="small ion-compose"></i></a></td><td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Ocultar"  href=""><i class="small ion-eye-disabled"></i></a></td></tr>';
+					echo '<tr><td>'.$registro[1].' '.$registro[2].' '.$registro[3].'</td><td><a class="inscribir" href="tipoSuscripcion.php?id='.$registro[0].'">Inscribir</a></td>'.'</td><td><a class="tooltipped" data-position="left" data-delay="20" data-tooltip="Ver Datos" href="verCliente.php?id='.$registro[0].'"'.'><h5 ><i class="small mdi-action-visibility"></i></h5></a></td>'.'</td><td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Editar Cliente" href="editarCliente.php?id='.$registro[0].'"'.'><i class="small ion-compose"></i></a></td><td><a class="tooltipped" data-position="right" data-delay="20" data-tooltip="Eliminar"  href="eliminarcliente.php?id='.$registro[0].' "><i class="small ion-trash-a"></i></a></td></tr>';
 				}
 				else
 				{
