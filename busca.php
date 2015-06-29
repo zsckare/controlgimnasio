@@ -1,5 +1,6 @@
 <?php 
-
+include('conexion.inc.php');
+$link=Conectarse();
 $buscar = $_POST['b'];
        
       if(!empty($buscar)) {
@@ -7,10 +8,9 @@ $buscar = $_POST['b'];
       }
        
       function buscar($b) {
-            $con = mysql_connect('localhost','root', '');
-            mysql_select_db('gimnasio', $con);
+            
        
-            $sql = mysql_query("SELECT * FROM clientes WHERE nombre LIKE '%".$b."%' OR paterno LIKE '%".$b."%' ",$con);
+            $sql = mysql_query("SELECT * FROM clientes WHERE nombre LIKE '%".$b."%' OR paterno LIKE '%".$b."%' ");
              
             $contar = mysql_num_rows($sql);
              
@@ -30,31 +30,32 @@ $buscar = $_POST['b'];
                         $vence=$row['prox'];
                  if($act==1){
 					        echo '
-                    <a href="verCliente.php?id='.$row[0].'"class="row center-align">
-                    <ul>';
-                     if($vence==1){
-                      echo '<li class="blue alto">';
-                     } else{
-                      echo '<li class="light-green alto">';
-                     }
-                    
-                    echo '<p>
-                    <img src="'.$foto.'" alt="" class="responsive-img col m2">'
-                    .''.$nombre." ".$paterno." ".$materno.''.'
-                    </p></li>
-                    </ul>
-                    </a>
+                     <div class="row">
+                         <div class="row light-green alto">
+                           <div class="col s2 m2 l2 offset-s1 offset-m1 offset-l1 ">
+                             <img src="'.$foto.'" alt="" class="responsive-img">   
+                           </div>
+                           <div class="col s7 m7 l7">
+                             <p>'.$nombre." ".$paterno." ".$materno.'</p>
+                           </div>
+                            <div class="col s2 m2 l2">
+                              <a href="asistenciasClientes.php?id='.$id.'&checo=0" class="btn-floating waves-effect waves-light light-green darken-4 tooltipped" style="margin-top:.2em;" data-position="top" data-delay="20" data-tooltip="Registrar Entrada"><i class="ion-checkmark "></i></a>
+                            </div>
+                         </div>
+                       </div>
 					        ';
                 }else{
                   echo '
-                    <a href="verCliente.php?id='.$row[0].'"class="row center-align">
-                    <ul>
-                    <li class="red accent-4 alto"><p>
-                    <img src="'.$foto.'" alt="" class="responsive-img col m2">'
-                    .''.$nombre." ".$paterno." ".$materno.''.'
-                    </p></li>
-                    </ul>
-                    </a>
+                     <div class="row">
+                         <div class="row red accent-4 alto">
+                           <div class="col s2 m2 l2 offset-s1 offset-m1 offset-l1 ">
+                             <img src="'.$foto.'" alt="" class="responsive-img">   
+                           </div>
+                           <div class="col s8 m8 l8">
+                             <p>'.$nombre." ".$paterno." ".$materno.'</p>
+                           </div>
+                         </div>
+                       </div>
                   ';
                 }
                   }

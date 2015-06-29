@@ -37,23 +37,11 @@
 			}
 			?>
 				<SCRIPT LANGUAJE="javascript">
-					location.href="asistenciasClientes.php";
+					location.href="home.php";
 				</SCRIPT>
 			<?php
 		}
-		$result=mysql_query("SELECT * FROM instructores ",$link);
-		echo '<div class="card paddin-largo" >';
-		echo '<h2 class="center	" >Checador de Asistencias Instructores</h2>';
-		echo '<table class="striped"><br>';
 		
-		
-		while ($row = mysql_fetch_row($result)){ 
-		       echo '<tr><td>'.$row[3].'</td><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a class="btn-floating btn-large waves-effect waves-light light-green"  href="checarAsistencia.php?id='.$row[0].'&checo=0"><i class="mdi-content-send"></i></a></td><td><a class="btn-floating btn-large waves-effect waves-light red" href="checarAsistencia.php?id='.$row[0].'&checo=1"><i class="mdi-navigation-close"></i></a></td></tr><br>'; 
-		} 
-		echo "</table> \n";
-		echo '</div>';
-		mysql_free_result($result);
-		mysql_close($link);
 	?>
 
 

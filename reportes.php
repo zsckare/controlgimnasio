@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+	if(isset($_SESSION['user_access'])){
+
+    }
+    else{
+     header("Location: ../index.php");
+    } 
+    ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,8 +28,8 @@
 		</div>
 		<div class="row">
 
-			<div class="espacio-izq">
-				<a class="card paneles col s12 m5	 efecto-loco" href="reporteAsistencias.php">
+			<div class="">
+				<a class="card paneles col s12 m3 l3 offset-m1 offset-l1	 efecto-loco" href="reporteAsistencias.php">
 					<div class="row up-space">
 						<div class="col m12">
 							<h3 class="center-align grande ion-ios-calendar-outline"></h3>
@@ -29,11 +37,23 @@
 					</div>
 					<div class="row">
 						<div class="col s12 m12">
-							<h4 class="center-align">Reportes Asistencias</h4>
+							<p class="center-align reportes">Reportes Asistencias Instructores</p>
 						</div>
 					</div>
 				</a>
-				<a class="card paneles col s12 m5 offset-m1 efecto-loco	" href="reportesIngresos.php">
+				<a class="card paneles col s12 m3 l3 offset-m1 offset-l1	 efecto-loco" href="reporteAsistenciasClientes.php">
+					<div class="row up-space">
+						<div class="col m12">
+							<h3 class="center-align grande ion-ios-calendar-outline"></h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m12">
+							<p class="center-align reportes">Reportes Asistencias Clientes</p>
+						</div>
+					</div>
+				</a>
+				<a class="card paneles col s12 m3 l3 offset-l1 offset-m1 efecto-loco	" href="reportesIngresos.php">
 										<div class="row up-space">
 						<div class="col m12">
 							<h3 class="center-align grande ion-cash"></h3>
@@ -41,7 +61,7 @@
 					</div>
 					<div class="row">
 						<div class="col s12 m12">
-							<h4 class="center-align">Reportes Ingresos</h4>
+							<p class="center-align reportes">Reportes Ingresos</p>
 						</div>
 					</div>
 				</a>

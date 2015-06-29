@@ -12,7 +12,7 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Tavos Gym | Reporte Asistencias Instructores</title>
+  <title>Tavos Gym | Reporte Asistencias Clientes</title>
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -29,7 +29,7 @@ session_start();
 	<?php
 		echo 
 		'<div class="row">
-		<form action="reporteAsistencias.php" method="POST">
+		<form action="reporteAsistenciasClientes.php" method="POST">
 			
 			<div class="col s6 m3">
 				<label for="desde">Desde</label>
@@ -92,10 +92,10 @@ session_start();
 					$final="AND( fecha <= '".$final."' )";
 				}
 			}
-			$consulta="SELECT asistencias.*, instructores.nombre, instructores.paterno, instructores.materno FROM asistencias, instructores WHERE (instructores.id = asistencias.id) ".$inicio.$final." ".$ver." ORDER BY asistencias.fecha, asistencias.hora";
+			$consulta="SELECT asistenciasclientes.*, clientes.nombre, clientes.paterno, clientes.materno FROM asistenciasclientes, clientes WHERE (clientes.id = asistenciasclientes.id) ".$inicio.$final." ".$ver." ORDER BY asistenciasclientes.fecha, asistenciasclientes.hora";
 			
 			$resultado=mysql_query($consulta, $link)or die(mysql_error());
-			echo '<table><tr><td></td><td>Fecha</td><td colspan=3>Instructor</td><td>Hora</td><tr><td></tr>';
+			echo '<table><tr><td></td><td>Fecha</td><td colspan=3>Cliente</td><td>Hora</td><tr><td></tr>';
 			$c=1;
 			while($registro= mysql_fetch_row($resultado))
 			{

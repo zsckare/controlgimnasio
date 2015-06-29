@@ -1,20 +1,65 @@
 <?php 
-	include ("conexion.inc.php");
+include('conexion.inc.php');
+$link=Conectarse();
+$buscar = $_POST['b'];
+       
+      if(!empty($buscar)) {
+            buscar($buscar);
+      }
+       
+      function buscar($b) {
+            
+       
+            $sql = mysql_query("SELECT * FROM clientes WHERE nombre LIKE '%".$b."%' OR paterno LIKE '%".$b."%' ");
+             
+            $contar = mysql_num_rows($sql);
+             
+            if($contar == 0){
+            	echo '<p class="center-align">No se han encontrados resultados para '.$b." ".'<i class="small ion-sad-outline "></i></p>';
 
+            }else{                      
 
-	$search= '';
-	if(isset($_POST['search'])){
-		$search= $_POST['search'];
-	}
-	$link=Conectarse();				
-	$result=mysql_query("SELECT * FROM clientes WHERE nombre LIKE '%".$search."%' OR paterno '%".$search."%' ORDER BY paterno",$link);
-	$fila = mysql_fetch_row($result);
+	              		  
+                  while($row=mysql_fetch_array($sql)){
+                        $nombre = $row['nombre'];
+                        $paterno= $row['paterno'];
+                        $materno= $row['materno'];
+                        $foto= $row['imagen'];
+                        $id = $row['id'];
+                        $act= $row['activo'];
+                        $vence=$row['prox'];
+                 if($act==1){
+					        echo '
+                    <a href="verCliente.php?id='.$row[0].'"class="row center-align">
+                    <ul>';
+                     if($vence==1){
+                      echo '<li class="blue alto">';
+                     } else{
+                      echo '<li class="light-green alto">';
+                     }
+                    
+                    echo '<p>
+                    <img src="'.$foto.'" alt="" class="responsive-img col m2">'
+                    .''.$nombre." ".$paterno." ".$materno.''.'
+                    </p></li>
+                    </ul>
+                    </a>
+					        ';
+                }else{
+                  echo '
+                    <a href="verCliente.php?id='.$row[0].'"class="row center-align">
+                    <ul>
+                    <li class="red accent-4 alto"><p>
+                    <img src="'.$foto.'" alt="" class="responsive-img col m2">'
+                    .''.$nombre." ".$paterno." ".$materno.''.'
+                    </p></li>
+                    </ul>
+                    </a>
+                  ';
+                }
+                  }
+             
+            }
+      }
 
-?>
-<?php if($search!='') { ?>
-	<h4>Resultados </h4>
-	<?php do { ?>
-		<?php echo $fila[3]; ?>
-	<?php } while($fila = mysql_fetch_row($result)); ?>
-
-<?php } ?>
+ ?>

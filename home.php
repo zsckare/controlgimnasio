@@ -1,3 +1,12 @@
+<?php 
+session_start();
+	if(isset($_SESSION['user_access'])){
+
+    }
+    else{
+     header("Location: ../index.php");
+    } 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +26,7 @@
 
 		<div class="row">
 			<div class="col m7 s12 card up-space paddin-largo" >
-				<h3 class="center-align">Buscar Cliente</h3>
+				<h3 class="center-align">Asistecias Clientes</h3>
 				<div class="row">
 					<div class="col m8 s12 offset-m2 center-align">
 						<form>
@@ -31,7 +40,7 @@
 				</div>
 				<div class="row">
 					
-						<div id="resultados"class="col m10"></div>
+						<div id="resultados"class="col s10 m10 l10 offset-s1 offset-m1 offset-l1"></div>
 					
 				</div>
 			</div>
