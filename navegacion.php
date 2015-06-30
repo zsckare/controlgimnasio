@@ -43,7 +43,7 @@ switch($archivo_actual) //Valido en que archivo estoy para generar mi CSS de sel
 	    <ul class="right hide-on-med-and-down">
 	      <!-- Dropdown Trigger -->
 	      <li <?php echo $a; ?>  ><a href="home.php"><i class="ion-home left"></i>Inicio </a></li>
-	      <li <?php echo $b; ?>  ><a href="checarAsistencia.php"><i class="ion-clock left" ></i> Checador</a></li>
+	      <li <?php echo $b; ?>  ><a href="checarAsistencia.php"><i class="ion-clock left" ></i> Checador Instructores</a></li>
 	      <li <?php echo $c; ?>  ><a href="reportes.php"><i class="ion-android-document left"></i>Reportes</a></li>
 	      <?php 
 	      if ($acceso==1) {
@@ -55,7 +55,7 @@ switch($archivo_actual) //Valido en que archivo estoy para generar mi CSS de sel
 	    </ul>
 	    <ul class="side-nav" id="mobile-demo">
 	      <li><a href="home.php"><i class="ion-home left"></i>Inicio</a></li>
-	      <li><a href="checarAsistencia.php"><i class="ion-clock left" ></i> Checador</a></li>
+	      <li><a href="checarAsistencia.php"><i class="ion-clock left" ></i> Checador Instructores</a></li>
 	      <li><a href="reportes.php"><i class="ion-android-document left"></i>Reportes</a></li>
 	      <li><a href="administrar.php"><i class="ion-ios-cog-outline left"></i>Administración</a></li>
 	    </ul>
